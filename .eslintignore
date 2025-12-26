@@ -1,6 +1,0 @@
-build/*.js
-src/assets/
-public/
-dist/
-static/
-src/utils/notify.js

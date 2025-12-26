@@ -1,0 +1,263 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      "出差事由": "买榴莲买榴莲买榴莲买榴莲买榴莲买榴莲买榴莲",
+      "部门名称": "技术部",
+      "填报日期": "2023年11月01日",
+      "附件": "66",
+      "姓名": "李四、王五、赵四、吕布",
+      "职别": "高级技工",
+      "出发日期1": '2024-09-09',
+      "返程日期1": '2024-09-15',
+      "出发地点1": '河南省三门峡市湖滨区1',
+      "到达地点1": '河南省郑州市某某区1',
+      "天数1": '1',
+      "出发日期2": '2024-09-09',
+      "返程日期2": '2024-09-15',
+      "出发地点2": '河南省三门峡市湖滨区2',
+      "到达地点2": '河南省郑州市某某区2',
+      "天数2": '2',
+      "出发日期3": '2024-09-09',
+      "返程日期3": '2024-09-15',
+      "出发地点3": '河南省三门峡市湖滨区3',
+      "到达地点3": '河南省郑州市某某区3',
+      "天数3": '3',
+      "出发日期4": '2024-09-09',
+      "返程日期4": '2024-09-15',
+      "出发地点4": '河南省三门峡市湖滨区4',
+      "到达地点4": '河南省郑州市某某区4',
+      "天数4": '4',
+      "飞机费": '1987.56',
+      "火车费": '3258.88',
+      "油费": '1234.55',
+      "过桥过路费": '6875.58',
+      "其他1": '6541.25',
+      "会务费": '7584.25',
+      "进修费": '6985.66',
+      "住宿费": '3894.99',
+      "其他2": '7943.76',
+      "伙食补助": '1597.89',
+      "交通补助": '3497.58',
+      "金额大写": '玖亿捌仟柒佰陆拾伍万捌仟肆佰捌拾陆元捌角捌分',
+      "金额小写": '987658486.88',
+      "领导审批": '我是领导我同意了',
+      "财务负责人": '我是财务负责人我同意了',
+      "资金来源": '资金来源啊啊啊啊啊',
+      "项目名称": '我有一个大项目',
+      "银行名称帐号": '688595684574859688',
+      "报销人": '周瑜'
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内"
+       style="width: 100%;height: 100%;display: flex;color: #000000;font-weight: 400;font-size: 3.17mm;font-family: STSongti-SC, STSongti-SC;"
+  >
+    <div
+      style="padding: 47.62mm 11.99mm 47.62mm 14.46mm;display: flex;flex-flow: column;justify-content: space-between;font-weight: 400;font-size: 6.35mm;color: #000000;"
+    >
+      <div>装</div>
+      <div>订</div>
+      <div>线</div>
+    </div>
+    <div style="height: 100%;box-sizing:border-box;padding: 23.99mm 0 31.04mm 0;">
+      <div style="height: 100%;border-left: 0.18mm dashed #292C33;"></div>
+    </div>
+    <div style="flex: 1;height: 100%;display: flex;flex-flow: column;">
+      <div style="width: 224mm;margin-left: 13.4mm;">
+        <div
+          style="width: 100%;text-align: center;font-weight: 900;font-size: 6.35mm;color: #000000;line-height: 8.82mm;font-style: normal;padding: 35.27mm 16mm 7.05mm 0;box-sizing: border-box;"
+        >
+          三门峡市直机关工作人员出差审批单
+        </div>
+        <div style="width: 100%;display: flex;justify-content: space-between;padding-bottom: 4.23mm;">
+          <div style="">填表人：{填表人}</div>
+          <div style="width: 78.66mm;">填表日期：{填表日期}</div>
+        </div>
+        <div style="overflow: hidden;">
+          <table
+            style="table-layout: fixed;border-collapse: collapse;font-size: 3.17mm;font-weight: 400;font-style: normal;"
+          >
+            <tbody>
+            <tr style="height: 0;font-size: 0;" t="本行用于控制列宽">
+              <td style="width: 39.15mm;"></td>
+              <td style="width: 76.88mm;"></td>
+              <td style="width: 39.15mm;"></td>
+              <td style="width: 76.88mm;"></td>
+            </tr>
+            <tr style="height: 17.64mm;">
+              <td style="text-align: center;background-color: #EDF0F2;border-top: 0.35mm solid #000000;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;border-left: 0.35mm solid #000000;"
+                  colspan="1"
+              >出差人
+              </td>
+              <td style="text-align: center;border-top: 0.35mm solid #000000;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >
+                <div
+                  style="height: 17.64mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {出差人}
+                </div>
+              </td>
+              <td style="text-align: center;background-color: #EDF0F2;border-top: 0.35mm solid #000000;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >工作单位及职务
+              </td>
+              <td style="text-align: center;border-top: 0.35mm solid #000000;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >
+                <div
+                  style="height: 17.64mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {职务}
+                </div>
+              </td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;background-color: #EDF0F2;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;border-left: 0.35mm solid #000000;"
+                  rowspan="4"
+              >出差地点
+              </td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >
+                <div
+                  style="height: 8.82mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {出发1省}{出发1市}{出发1区}至{到达1省}{到达1市}{到达1区}
+                </div>
+              </td>
+              <td style="text-align: center;background-color: #EDF0F2;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  rowspan="2"
+              >出差事由
+              </td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  rowspan="2"
+              >
+                <div
+                  style="height: 17.99mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {出差事由}
+                </div>
+              </td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >
+                <div
+                  style="height: 8.82mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {出发2省}{出发2市}{出发2区}至{到达2省}{到达2市}{到达2区}
+                </div>
+              </td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >
+                <div
+                  style="height: 8.82mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {出发3省}{出发3市}{出发3区}至{到达3省}{到达3市}{到达3区}
+                </div>
+              </td>
+              <td style="text-align: center;background-color: #EDF0F2;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  rowspan="2"
+              >会议、培训期间<br/>费用支付单位
+              </td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  rowspan="2"
+              >
+                <div
+                  style="height: 17.99mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {费用支付单位}
+                </div>
+              </td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >
+                <div
+                  style="height: 8.82mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {出发4省}{出发4市}{出发4区}至{到达4省}{到达4市}{到达4区}
+                </div>
+              </td>
+            </tr>
+            <tr style="height: 17.64mm;">
+              <td style="text-align: center;background-color: #EDF0F2;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;border-left: 0.35mm solid #000000;"
+                  colspan="1"
+              >拟出差时间
+              </td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >
+                <div
+                  style="height: 17.64mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {出差开始时间}至{出差结束时间}
+                </div>
+              </td>
+              <td style="text-align: center;background-color: #EDF0F2;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >拟乘坐交通工具<br/>(是否带车)
+              </td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="1"
+              >
+                <div
+                  style="height: 17.64mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: center;justify-content: flex-start;padding-left: 2.82mm;"
+                >
+                  {交通工具}（{是否带车}）
+                </div>
+              </td>
+            </tr>
+            <tr style="height: 17.64mm;">
+              <td style="text-align: center;background-color: #EDF0F2;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;border-left: 0.35mm solid #000000;"
+                  colspan="1"
+              >审批人
+              </td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;"
+                  colspan="3"
+              >
+                <div
+                  style="height: 17.64mm;line-height: 4.59mm;overflow:hidden;display: flex;align-items: flex-end;justify-content: flex-end;padding-right: 2.82mm;"
+                >
+                  {日期}
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div style="margin-top: 4.23mm;">备注：出差人员出差前需填写本单，报相关负责人审批，办理报销手续时作原始凭证，如有会议、培训、调研等活动通知的需将通知附后。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

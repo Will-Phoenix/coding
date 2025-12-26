@@ -1,0 +1,575 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../../cdn/lodash.min.js"></script>
+  <script src="../../cdn/html2canvas.min.js"></script>
+  <script src="../../cdn/FileSaver.min.js"></script>
+  <script src="../../helper.js"></script>
+  <script>
+    const printData = {
+      "applyTime": "",
+      "applyTimeDay": "",
+      "applyTimeMonth": "",
+      "applyTimeYear": "",
+      "applyUserName": "张东东",
+      "deptName": "技术部",
+      "id": "512896662235084613",
+      "line1BeginDay": "01",
+      "line1BeginHour": "12",
+      "line1BeginMonth": "01",
+      "line1BusinessTraveler": "张大仙、李四维、张大仙、李四维、张大仙、李四维、张大仙、李四维、张大仙",
+      "line1Days": "1",
+      "line1DepartCity": "三门峡市",
+      "line1DepartDist": "湖滨区",
+      "line1DepartProv": "河南省",
+      "line1DestCity": "太原市",
+      "line1DestDist": "迎泽区",
+      "line1DestProv": "山西",
+      "line1EndDay": "02",
+      "line1EndHour": "12",
+      "line1EndMonth": "01",
+      "line1PeopleNum": "2",
+      "line1RoomCost": "280",
+      "line1SubsidyCost": "120",
+      "line1SubsidyStandard": "120",
+      "line1TravelCost": "300",
+      "line1VehicleType": "火车",
+      "line2BeginDay": "03",
+      "line2BeginHour": "12",
+      "line2BeginMonth": "01",
+      "line2Days": "2",
+      "line2DepartCity": "大同市",
+      "line2DepartDist": "矿区",
+      "line2DepartProv": "山西",
+      "line2DestCity": "三门峡市",
+      "line2DestDist": "湖滨区",
+      "line2DestProv": "河南省",
+      "line2EndDay": "05",
+      "line2EndHour": "12",
+      "line2EndMonth": "01",
+      "line2PeopleNum": "2",
+      "line2RoomCost": "390",
+      "line2SubsidyCost": "220",
+      "line2SubsidyStandard": "110",
+      "line2TravelCost": "500",
+      "line2VehicleType": "自驾",
+      "line3BeginDay": "",
+      "line3BeginHour": "",
+      "line3BeginMonth": "",
+      "line3Days": "",
+      "line3DepartCity": "",
+      "line3DepartDist": "",
+      "line3DepartProv": "",
+      "line3DestCity": "",
+      "line3DestDist": "",
+      "line3DestProv": "",
+      "line3EndDay": "",
+      "line3EndHour": "",
+      "line3EndMonth": "",
+      "line3PeopleNum": "2",
+      "line3RoomCost": "",
+      "line3SubsidyCost": "",
+      "line3SubsidyStandard": "",
+      "line3TravelCost": "",
+      "line3VehicleType": "",
+      "line4BeginDay": "",
+      "line4BeginHour": "",
+      "line4BeginMonth": "",
+      "line4Days": "",
+      "line4DepartCity": "",
+      "line4DepartDist": "",
+      "line4DepartProv": "",
+      "line4DestCity": "",
+      "line4DestDist": "",
+      "line4DestProv": "",
+      "line4EndDay": "",
+      "line4EndHour": "",
+      "line4EndMonth": "",
+      "line4PeopleNum": "2",
+      "line4RoomCost": "",
+      "line4SubsidyCost": "",
+      "line4SubsidyStandard": "",
+      "line4TravelCost": "",
+      "line4VehicleType": "",
+      "orderNo": 482,
+      "projectName": "大项目试打印模板试打印模板试打印模板试打印模板v",
+      "sumDays": "3",
+      "sumRoomCost": "6700.25",
+      "sumSubsidyCost": "3400.35",
+      "sumTotal": 1810.0,
+      "sumTotalChinese": "壹仟捌佰壹拾元整",
+      "sumVehicleCost": "8000.25",
+      "travelCause": "事由-测试打印模板试打印模板试打印模板试打印模板试打印模板",
+      "行程出差人1": "张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东",
+      "行程出差人2": "张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东",
+      "行程出差人3": "张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东",
+      "行程出差人4": "张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东",
+      "行程出差人5": "张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东",
+      "行程出差人6": "张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东",
+      "e7": "1000.25",
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div style="width: 100%; height: 100%; display: flex; color: #000000; font-weight: 400;">
+    <div style="width: 43.386mm;height: 100%;display: flex;flex-flow: row;align-items: center;">
+      <div style="height: 128.394mm;font-size: 7.055mm;font-weight: 400;color: #000000;display: flex;flex-direction: column;justify-content: space-between;margin-left: 14.109mm;">
+        <div>装</div>
+        <div>订</div>
+        <div>线</div>
+      </div>
+      <div style="height: 154.849mm;width: 0.18mm;border-left: 0.18mm dashed #292C33;margin-left: 11.640mm;"></div>
+    </div>
+    <div style="flex: 1; height: 100%;">
+      <div style="height: 47.619mm; width: 100%; position: relative;display: flex;flex-direction: column;justify-content: space-between;padding-bottom: 4.233mm; overflow: hidden; font-size: 3.175mm;">
+        <div style="font-size: 6.349mm; color: #000000; font-weight: 900; text-align: center; padding-top: 22.928mm; padding-right: 28.928mm;">差旅费用报销单</div>
+        <div style="display: flex; position: absolute; right: 28.928mm; top: 22.928mm; width: 61.376mm; height: 8.818mm;">
+          <div style="width: 19.048mm; height: 100%; background: #EDF0F2; border: 0.35mm solid #000000; display: flex; align-items: center; justify-content: center;">编号</div>
+          <div style="flex: 1; height: 100%; background: #FFFFFF; border: 0.35mm solid #000000; border-left: none; display: flex; align-items: center; overflow: hidden; white-space: nowrap; padding: 0 0.5mm;">{编号}</div>
+        </div>
+        <div style="display: flex; align-items: center;box-sizing: border-box; padding-right: 28.928mm;">
+          <div>部门：</div>
+          <div style="width: 93.121mm; overflow: hidden; white-space: nowrap;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.部门">{部门}</span></div>
+          <div style="white-space: nowrap; text-align: center;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.提交时间">{提交时间}</span></div>
+          <div style="font-weight: 500; flex: 1; text-align: right;">三门峡崤云信息服务股份有限公司</div>
+        </div>
+      </div>
+      <div style="border: 1px solid #000000; overflow: hidden; display: inline-block;">
+        <table style="font-size: 3.175mm; table-layout: fixed; border-collapse: collapse;">
+          <tbody>
+          <tr style="height: 0; border-style: hidden;">
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 45.855mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 18.342mm; border: none;"></td>
+            <td style="width: 27.513mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 14.815mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+          </tr>
+          <tr style="height: 9.172mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="2">出差人</td>
+            <td style=" border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;" colspan="3">
+              <div style="max-height: 9.172mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差人">{出差人}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">出差事由</td>
+            <td style="border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;" colspan="4">
+              <div style="max-height: 9.172mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差事由">{出差事由}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="2">项目名称</td>
+            <td style="border-bottom: 1px solid #000000; padding-left: 2.822mm;" colspan="5">
+              <div style="max-height: 9.172mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.项目名称">{项目名称}</span></div>
+            </td>
+          </tr>
+          <tr style="height: 8.818mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="3">出发</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="4">到达</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" rowspan="2">人数</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="2">交通</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" rowspan="2">天数</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="2">出差补助</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="2">其他费用</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" rowspan="2">小计</td>
+            <td style="text-align: center; border-bottom: 1px solid #000000; background-color: #edf0f2;" rowspan="2">单据<br />张数</td>
+          </tr>
+          <tr style="height: 8.818mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">月</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">日</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">地点</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">月</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">日</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="2">地点</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">工具</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">金额</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">标准</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">金额</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">住宿</td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;">市内<br/>交通</td>
+          </tr>
+          <tr style="height: 13.758mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期1月">{出发日期1月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期1日">{出发日期1日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地1省">{出发地1省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地1市">{出发地1市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地1县">{出发地1县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期1月">{到达日期1月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期1日">{到达日期1日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地1省">{目的地1省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地1市">{目的地1市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地1县">{目的地1县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.人数1">{人数1}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.乘坐交通工具1">{乘坐交通工具1}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出行费用1">{出行费用1}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.天数1">{天数1}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助标准1">{出差补助标准1}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助金额1">{出差补助金额1}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.住宿费用1">{住宿费用1}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.行程小计1">{行程小计1}</span></div>
+            </td>
+            <td style="text-align: center; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.758mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期2月">{出发日期2月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期2日">{出发日期2日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地2省">{出发地2省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地2市">{出发地2市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地2县">{出发地2县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期2月">{到达日期2月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期2日">{到达日期2日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地2省">{目的地2省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地2市">{目的地2市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地2县">{目的地2县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.人数2">{人数2}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.乘坐交通工具2">{乘坐交通工具2}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出行费用2">{出行费用2}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.天数2">{天数2}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助标准2">{出差补助标准2}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助金额2">{出差补助金额2}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.住宿费用2">{住宿费用2}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.行程小计2">{行程小计2}</span></div>
+            </td>
+            <td style="text-align: center; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.758mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期3月">{出发日期3月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期3日">{出发日期3日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地3省">{出发地3省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地3市">{出发地3市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地3县">{出发地3县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期3月">{到达日期3月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期3日">{到达日期3日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地3省">{目的地3省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地3市">{目的地3市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地3县">{目的地3县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.人数3">{人数3}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.乘坐交通工具3">{乘坐交通工具3}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出行费用3">{出行费用3}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.天数3">{天数3}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助标准3">{出差补助标准3}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助金额3">{出差补助金额3}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.住宿费用3">{住宿费用3}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.行程小计3">{行程小计3}</span></div>
+            </td>
+            <td style="text-align: center; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.758mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期4月">{出发日期4月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期4日">{出发日期4日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地4省">{出发地4省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地4市">{出发地4市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地4县">{出发地4县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期4月">{到达日期4月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期4日">{到达日期4日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地4省">{目的地4省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地4市">{目的地4市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地4县">{目的地4县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.人数4">{人数4}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.乘坐交通工具4">{乘坐交通工具4}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出行费用4">{出行费用4}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.天数4">{天数4}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助标准4">{出差补助标准4}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助金额4">{出差补助金额4}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.住宿费用4">{住宿费用4}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.行程小计4">{行程小计4}</span></div>
+            </td>
+            <td style="text-align: center; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.758mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期5月">{出发日期5月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期5日">{出发日期5日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地5省">{出发地5省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地5市">{出发地5市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地5县">{出发地5县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期5月">{到达日期5月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期5日">{到达日期5日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地5省">{目的地5省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地5市">{目的地5市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地5县">{目的地5县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.人数5">{人数5}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.乘坐交通工具5">{乘坐交通工具5}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出行费用5">{出行费用5}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.天数5">{天数5}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助标准5">{出差补助标准5}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助金额5">{出差补助金额5}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.住宿费用5">{住宿费用5}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.行程小计5">{行程小计5}</span></div>
+            </td>
+            <td style="text-align: center; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.758mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期6月">{出发日期6月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发日期6日">{出发日期6日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地6省">{出发地6省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地6市">{出发地6市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出发地6县">{出发地6县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期6月">{到达日期6月}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.到达日期6日">{到达日期6日}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 11.64mm; font-size: 2.822mm; line-height: 3.880mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地6省">{目的地6省}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地6市">{目的地6市}</span><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.目的地6县">{目的地6县}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.人数6">{人数6}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.乘坐交通工具6">{乘坐交通工具6}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出行费用6">{出行费用6}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.天数6">{天数6}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助标准6">{出差补助标准6}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.出差补助金额6">{出差补助金额6}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.住宿费用6">{住宿费用6}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.行程小计6">{行程小计6}</span></div>
+            </td>
+            <td style="text-align: center; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.758mm;">
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;" colspan="9">
+              <div style="height: 4.586mm;">合计</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.sumVehicleCost">{sumVehicleCost}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.sumDays">{sumDays}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">-</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.sumSubsidyCost">{sumSubsidyCost}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.sumRoomCost">{sumRoomCost}</span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{xxx}</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.报销总金额">{报销总金额}</span></div>
+            </td>
+            <td style="text-align: center; border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.758mm; line-height: 4.586mm; overflow: hidden; word-break: break-all;">{e8}</div>
+            </td>
+          </tr>
+          <tr style="height: 9.172mm;">
+            <td style="text-align: center; border-right: 1px solid #000000;" colspan="9">
+              <div style="max-height: 9.172mm; overflow: hidden; word-break: break-all;display: flex; align-items: center;margin-left: 2.822mm;">合计人民币（大写）：ⓧ<span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.报销总金额大写">{报销总金额大写}</span><span style="margin-left: 9.876mm;">&yen;<span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.报销总金额">{报销总金额}</span></span></div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; background-color: #edf0f2;" colspan="2">预借金额</td>
+            <td style="text-align: center; border-right: 1px solid #000000;" colspan="2">
+              <div style="max-height: 9.172mm; overflow: hidden; word-break: break-all;">{s1}</div>
+            </td>
+            <td style="text-align: center; border-right: 1px solid #000000; background-color: #edf0f2;" colspan="2">退补金额</td>
+            <td style="text-align: center;" colspan="2">
+              <div style="max-height: 9.172mm; overflow: hidden; word-break: break-all;">{s2}</div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 4.233mm; width: 100%; display: flex; align-items: center;font-size: 3.175mm;">
+        <div style="margin-left: 3.527mm;">董事长</div>
+        <div style="width: 29.982mm; overflow: hidden;">&nbsp;</div>
+        <div>总经理</div>
+        <div style="width: 26.102mm; overflow: hidden;">&nbsp;</div>
+        <div>财务总监</div>
+        <div style="width: 30.335mm; overflow: hidden;">&nbsp;</div>
+        <!--        <div>会计</div>--> <!--        <div style="width: 20.793mm;overflow: hidden;"></div>-->
+        <div>部门负责人</div>
+        <div style="width: 24.338mm; overflow: hidden;">&nbsp;</div>
+        <div>报销人</div>
+        <div style="flex: 1; width: 0; overflow: hidden; margin-left: 1mm;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false" data-tag="headTable.报销人">{报销人}</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

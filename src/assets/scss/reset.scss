@@ -1,0 +1,80 @@
+.el-dialog__header, .JNPF-dialog.JNPF-dialog_center .el-dialog .el-dialog__header {
+  padding-left: 32px;
+}
+
+.el-dialog__header {
+  background: rgba(43, 88, 216, 0.08);
+}
+
+.el-dialog__headerbtn {
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.el-dialog__title {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  color: #252f44;
+  line-height: 22px;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 14px;
+    background: linear-gradient(180deg, #0084FF 0%, rgba(0, 186, 255, 0.4) 100%);
+    border-radius: 1px;
+    top: calc((100% - 14px) / 2);
+    left: -12px;
+  }
+}
+
+// 如果需要红色主题title, 则参数为 <el-dialog custom-class="warn">...</el-dialog>
+.el-dialog.warn {
+  .el-dialog__header {
+    background: rgba(247, 78, 78, 0.08);
+  }
+
+  .el-dialog__title {
+    color: #F74E4E;
+
+    &:before {
+      background: linear-gradient(180deg, #F74E4E 0%, rgba(252, 134, 134, 0.4) 100%);
+    }
+  }
+}
+
+// 如果需要绿色主题title, 则参数为 <el-dialog custom-class="success">...</el-dialog>
+.el-dialog.success {
+  .el-dialog__header {
+    background: rgba(0, 186, 117, 0.08);
+  }
+
+  .el-dialog__title {
+    color: #00BA75;
+
+    &:before {
+      background: linear-gradient(180deg, #00BA75 0%, rgba(70, 255, 158, 0.4) 100%);
+    }
+  }
+}
+
+.dialog-custom-nopd {
+  .el-dialog__header {
+    padding: 0 20px;
+    height: 56px;
+    line-height: 56px;
+  }
+  .el-dialog__body {
+    padding: 0;
+    font-size: 0;
+  }
+}
+
+.vxe-select--panel.is--transfer {
+  z-index: 99999!important;
+}
+.vxe-table--tooltip-wrapper {
+  z-index: 99999!important;
+}

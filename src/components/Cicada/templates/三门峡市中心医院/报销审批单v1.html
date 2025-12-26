@@ -1,0 +1,129 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      "部门名称": "技术部",
+      "填报日期": "2023年11月01日",
+      "附件": "66",
+      "开支事由": '我要去买西瓜和榴莲',
+      "填报人": '鲁智深',
+      "发票金额大写": '玖亿捌仟柒佰陆拾伍万捌仟肆佰捌拾陆元捌角捌分',
+      "发票金额小写": '987658486.88',
+      "付款金额大写": '陆拾捌亿伍仟玖佰伍拾贰万陆仟肆佰壹拾伍元捌角捌分',
+      "付款金额小写": '6859526415.88',
+      "审批人": '曹操',
+      "主管领导": '孙权',
+      "财务负责人": '吕布',
+      "部门负责人": '袁绍',
+      "预算支出项目": '买东西',
+      "联签部门": '采购部'
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;display: flex;color: #000000;font-weight: 400;font-size: 3.17mm;font-family: STSongti-SC, STSongti-SC;">
+    <div style="padding: 47.62mm 11.99mm 47.62mm 14.46mm;display: flex;flex-flow: column;justify-content: space-between;font-weight: 400;font-size: 6.35mm;color: #000000;">
+      <div>装</div>
+      <div>订</div>
+      <div>线</div>
+    </div>
+    <div style="height: 100%;box-sizing:border-box;padding: 23.99mm 0 31.04mm 0;">
+      <div style="height: 100%;border-left: 0.18mm dashed #292C33;"></div>
+    </div>
+    <div style="flex: 1;height: 100%;display: flex;flex-flow: column;">
+      <div style="width: 100%;text-align: center;font-weight: 900;font-size: 6.35mm;color: #000000;line-height: 8.82mm;font-style: normal;padding: 56.44mm 0 7.05mm 0;">三门峡市中心医院报销审批单</div>
+      <div style="width: 236.68mm;margin-left: 13.4mm;">
+        <div style="width: 100%;display: flex;padding-bottom: 4.23mm;">
+          <div style="flex: 1;">部门名称：{部门名称}</div>
+          <div style="flex: 1;">填报日期：{填报日期}</div>
+          <div style="flex: 1;">附件：{附件}</div>
+        </div>
+        <div style="overflow: hidden;">
+          <table style="table-layout: fixed;border-collapse: collapse;font-size: 3.17mm;font-weight: 400;font-style: normal;">
+            <tbody>
+            <tr style="height: 0;" t="本行用于控制列宽">
+              <td style="width: 42.33mm;"></td>
+              <td style="width: 75.48mm;"></td>
+              <td style="width: 42.33mm;"></td>
+              <td style="width: 75.48mm;"></td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;background-color: #EDF0F2;border: 0.35mm solid #000000;" colspan="1">填报人</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;border-top:0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{填报人}</td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;border-top:0.35mm solid #000000;background-color: #EDF0F2;" colspan="1">项目</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;border-top:0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{项目}</td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;background-color: #EDF0F2;border-left: 0.35mm solid #000000;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;" colspan="1">类别</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{类别}</td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;" colspan="1">开支事由</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{开支事由}</td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;background-color: #EDF0F2;border-left: 0.35mm solid #000000;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;" colspan="1">资金来源</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{资金来源}</td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;" colspan="1">预算支出项目</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{预算支出项目}</td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;border-left: 0.35mm solid #000000;" colspan="1">发票金额</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="2">{发票金额大写}</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">¥{发票金额小写}</td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;border-left: 0.35mm solid #000000;" colspan="1">付款金额</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="2">{付款金额大写}</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">¥{付款金额小写}</td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;border-left: 0.35mm solid #000000;" colspan="1">部门负责人</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{部门负责人}</td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;padding: 0 2.82mm;" colspan="1">主管领导</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{主管领导}</td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;border-left: 0.35mm solid #000000;" colspan="1">财务负责人</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{财务负责人}</td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;padding: 0 2.82mm;" colspan="1">联签部门</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{联签部门}</td>
+            </tr>
+            <tr style="height: 8.82mm;">
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;border-left: 0.35mm solid #000000;" colspan="1">总会计师</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{总会计师}</td>
+              <td style="text-align: center;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;background-color: #EDF0F2;padding: 0 2.82mm;" colspan="1">院长</td>
+              <td style="text-align: left;border-right: 0.35mm solid #000000;border-bottom: 0.35mm solid #000000;padding: 0 2.82mm;" colspan="1">{院长}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="width: 100%;display: flex;margin-top: 4.23mm;">
+          <div style="flex: 1;">预算会计：{预算会计}</div>
+          <div style="flex: 1;">会计：{会计}</div>
+          <div style="flex: 1;">出纳：{出纳}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

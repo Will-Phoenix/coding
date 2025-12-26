@@ -1,0 +1,478 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+// @import './sidebar.scss';
+@import './btn.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+// label {
+//   font-weight: 700;
+// }
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  height: 100%;
+  background-color: #fff;
+  padding: 0 10px 10px;
+  overflow: hidden;
+  position: relative;
+
+  &.nohead {
+    padding-top: 10px;
+  }
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 10px;
+  padding-right: 10px;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(144, 147, 153, .3);
+  border-radius: 10px;
+  // -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+  // box-shadow: 1px 1px 5px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 20px;
+  background-clip: content-box;
+  // box-shadow: 0 0 0 5px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#app::-webkit-scrollbar {
+  width: 0;
+}
+
+#nprogress .bar {
+  background: #1890ff !important;
+}
+
+.center-custom-status {
+  padding: 1px 4px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #FFFFFF;
+  line-height: 17px;
+  white-space: nowrap;
+  word-break: keep-all;
+  border-radius: 4px;
+
+  &-success {
+    background-color: #00B4C4;
+  }
+
+  &-orange {
+    background-color: #FA914B;
+  }
+
+  &-gray {
+    background-color: #919499;
+  }
+
+  &-red {
+    background-color: #F05248;
+  }
+
+  &-fail {
+    background-color: #919499;
+  }
+}
+
+.custom-jnpf-table {
+  font-size: 14px;
+  padding: 0 10px;
+  .el-table th.el-table__cell.is-leaf, .el-table td.el-table__cell,.el-table__fixed-right-patch{
+    border-bottom-width: 0;
+  }
+  .el-table__fixed-right-patch{
+    background: #F5FBFB;
+  }
+  .el-table {
+    border:1px solid #F2F2F2;
+    th.el-table__cell {
+      background: #F5FBFB;
+      padding: 14px 0;
+      color: #3D4966;
+      font-weight: bold;
+      border-bottom-width: 0;
+    }
+
+    tbody {
+      tr {
+        background-color: #fff;
+
+        &:nth-child(even) {
+          background-color: #F5FBFB;
+        }
+      }
+
+      .el-table__cell {
+        padding: 14px 0;
+        border-bottom-width: 0;
+
+      }
+    }
+  }
+
+}
+
+.custom-jnpf-pagination {
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    margin-bottom: 10px;
+    background-color: #00B4C4;
+  }
+}
+.custom-jnpf-tabs{
+  .el-tabs__item.is-active,
+  .el-tabs__item:hover{
+    color: #00B4C4;
+  }
+  .el-tabs__active-bar{
+    background-color: #00B4C4;
+  }
+}
+.custom-vxe-table {
+  .vxe-loading>.vxe-loading--chunk {
+    color: #00B4C4;
+  }
+}
+.custom-vxe-table-container {
+  .vxe-table--render-default .vxe-body--row.row--stripe {
+    background-color: #F5FBFB !important;
+  }
+  .vxe-table--render-default.border--default .vxe-header--column {
+    background-color: #F5FBFB !important;
+  }
+  .vxe-table--render-default.border--full .vxe-header--column {
+    background-color: #F5FBFB !important;
+  }
+  .vxe-table--render-default .is--checked.vxe-cell--checkbox .vxe-checkbox--icon {
+    color: #00B4C4 !important;
+  }
+  .vxe-table--render-default .vxe-cell--checkbox .vxe-checkbox--icon {
+    &:hover {
+      color: #00B4C4;
+    }
+  }
+  .vxe-table--render-default .is--checked.vxe-cell--radio .vxe-radio--icon {
+    color: #00B4C4 !important;
+  }
+  .vxe-table--render-default .vxe-cell--radio .vxe-radio--icon {
+    &:hover {
+      color: #00B4C4;
+    }
+  }
+}
+.custom-vxe-table-container-1 {
+  margin-top: 20px;
+  height: calc(100% - 120px);
+}
+
+.custom-btn-search.el-button {
+  height: 31px;
+  background: #00B4C4;
+  border: none;
+  border-radius: 4px;
+  padding: 0 12px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 20px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #00B4C4;
+    opacity: 0.8;
+    color: #fff;
+  }
+}
+
+.custom-btn-reset.el-button {
+  height: 31px;
+  border-radius: 4px;
+  border: 1px solid #00B4C4;
+  padding: 0 12px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #00B4C4;
+  line-height: 20px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #fff;
+    opacity: 0.8;
+    color: #00B4C4;
+  }
+}
+
+.custom-date-picker.el-range-editor.is-active{
+  border-color: #00B4C4;
+  &:hover{
+    border-color: #00B4C4;
+    opacity: 0.8;
+  }
+}
+.custom-input{
+  .el-input__inner:focus{
+    border-color: #00B4C4;
+  }
+}
+
+.custom-user-select{
+  .el-select .el-input__inner:focus{
+    border-color: #00B4C4;
+  }
+}
+
+.custom-text-btn{
+  &.el-button--text{
+    color: #00B4C4;
+    &:hover,&:focus,&:active{
+      color: #00B4C4;
+      opacity: 0.8;
+    }
+  }
+}
+.custom-center-card{
+  margin-bottom: 13px;
+  border-radius: 8px;
+  .el-card__header {
+    padding: 12px 16px;
+    border-bottom: 0px;
+  }
+  .el-card__body {
+    padding: 0px 20px;
+  }
+}
+
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.custom-operate-btn-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #00B4C4;
+  .btn-divider {
+    width: 1px;
+    height: 14px;
+    margin: 3px 5px 0 5px;
+    background-color: #00B4C4;
+  }
+  .btn-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #00B4C4;
+    line-height: 20px;
+    cursor: pointer;
+  }
+}

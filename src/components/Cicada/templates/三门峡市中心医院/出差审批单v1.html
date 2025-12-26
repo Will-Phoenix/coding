@@ -1,0 +1,165 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      "申请时间": '2023年08月32日 16:23:41',
+      "审批编号": '20240656854125685956',
+      "姓名": '孙权',
+      "科室": '技术科',
+      "职别": '高级采购经理',
+      "出差事由": '买榴莲',
+      "出差人": '李四、王五、赵四、吕布',
+      "出差类型": '外出购买',
+      "是否为省内": '否',
+      "是否职称考试": '否',
+      "行程1地区": '三门峡湖滨区-西安高新区 火车 往返',
+      "行程1日期": '2023-08-23 至 2023-08-28（6天）',
+      "行程2地区": '三门峡湖滨区-西安高新区 火车 往返',
+      "行程2日期": '2023-08-23 至 2023-08-28（6天）',
+      "行程3地区": '三门峡湖滨区-西安高新区 火车 往返',
+      "行程3日期": '2023-08-23 至 2023-08-28（6天）',
+      "行程4地区": '三门峡湖滨区-西安高新区 火车 往返',
+      "行程4日期": '2023-08-23 至 2023-08-28（6天）',
+      "总天数": '24天',
+      "是否含餐": '是',
+      "预计费用": '365896.56',
+      "SYS_FLOW_TASK_OPERATOR_HISTORY": '王张起 发起审批 2023年08月32日 16:23:41\n张敬业 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41',
+      "SYS_FLOW_TASK_CIRCULATE": '李杰克、张凯瑞、金广智'
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 210mm;height: 297mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;display: flex;flex-flow: column;justify-content: center;color: #000000;font-weight: 400;font-size: 3.18mm;font-family: STSongti-SC, STSongti-SC;">
+    <div style="font-size: 6.35mm;line-height: 8.82mm;text-align: center;">出差审批单</div>
+    <div style="margin-top: 7.06mm;padding-left: 22.59mm;">
+      <span>三门峡市中心医院</span>
+      <span style="margin-left: 7.06mm;">申请时间：</span>
+      <span>{申请时间}</span>
+    </div>
+    <div style="margin-top: 2.82mm;padding-left: 22.59mm;">
+      <div style="width: 100%;position: relative;width: 164mm;">
+        <table style="table-layout: fixed;border-collapse: collapse;font-size: 3.18mm;font-weight: 400;font-style: normal;">
+          <tbody>
+          <tr style="height: 0;" t="本行用于控制列宽">
+            <td style="width: 40.94mm;"></td>
+            <td style="width: 40.94mm;"></td>
+            <td style="width: 40.94mm;"></td>
+            <td style="width: 40.94mm;"></td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">审批编号</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-top:0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{审批编号}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">姓名</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{姓名}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">科室</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{科室}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">职别</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{职别}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;font-weight: 500;" colspan="4">出差信息</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">出差事由</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{出差事由}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">出差人</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{出差人}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">出差类型</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{出差类型}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">是否为省内</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">{是否为省内}</td>
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">是否职称考试</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">{是否职称考试}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;font-weight: 500;" colspan="4">行程信息</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" rowspan="2">行程1</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{行程1地区}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{行程1日期}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" rowspan="2">行程2</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{行程2地区}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{行程2日期}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" rowspan="2">行程3</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{行程3地区}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{行程3日期}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" rowspan="2">行程4</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{行程4地区}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{行程4日期}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">总天数</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">{总天数}</td>
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">是否含餐</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">{是否含餐}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">预计费用</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{预计费用}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;font-weight: 500;" colspan="4">审批信息</td>
+          </tr>
+          <tr style="height: 35.29mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">审批人</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{SYS_FLOW_TASK_OPERATOR_HISTORY}</td>
+          </tr>
+          <tr style="height: 8.82mm;">
+            <td style="text-align: left;background-color: #EDF0F2;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;border-left: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="1">抄送</td>
+            <td style="text-align: left;border-right: 0.35mm solid #C8C9CC;border-bottom: 0.35mm solid #C8C9CC;padding: 0 2.82mm;" colspan="3">{SYS_FLOW_TASK_CIRCULATE}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

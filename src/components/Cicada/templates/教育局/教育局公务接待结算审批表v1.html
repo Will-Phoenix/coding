@@ -1,0 +1,137 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      "交通工具": "121",
+      "出发1区": "工农区",
+      "出发1市": "鹤岗市",
+      " 出发1省": "黑龙江省",
+      "出发2区": "",
+      "出发2市": "",
+      "出发2省": "",
+      "出发3区": "",
+      "出发3市": "",
+      "出发3省": "",
+      "出发4区": "",
+      "出发4市": "",
+      "出发4省": "",
+      "出差事由": "2623",
+      "出差人": "孙晓茜",
+      "出差开始时间": "2023-10-24",
+      "出差结束时间": "2023-10-24",
+      "到达1区": "长宁区",
+      "到达1市": "市辖区",
+      "到达1省": "上海市",
+      "到达2区": "",
+      "到达2市": "",
+      "到达2省": "",
+      "到达3区": "",
+      "到达3市": "",
+      "到达3省": "",
+      "到达4区": "",
+      "到达4市": "",
+      "到达4省": "",
+      "填表日期": "2023年10月24日",
+      "是否带车": "是",
+      "职务": "科员",
+      "费用支付单位": "12232",
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;display: flex;color: #000000;font-weight: 400;">
+    <div style="width: 46.561mm;height: 100%;display: flex;flex-flow: row;align-items: center;">
+      <div style="height: 128.394mm;font-size: 7.055mm;font-weight: 400;color: #000000;display: flex;flex-direction: column;justify-content: space-between;margin-left: 14.109mm;">
+        <div>装</div>
+        <div>订</div>
+        <div>线</div>
+      </div>
+      <div style="height: 154.849mm;width: 0.18mm;border-left: 0.18mm dashed #292C33;margin-left: 11.640mm;"></div>
+    </div>
+    <div style="flex: 1;height: 100%;">
+      <div style="height: 59.964mm;width: 100%;position: relative;overflow: hidden;padding-bottom: 4.233mm;display: flex;flex-direction: column;justify-content: space-between;">
+        <div style="font-size: 6.349mm;line-height:9.876mm;color: #000000;font-weight: 900;text-align: center;padding-top: 35.273mm;padding-right: 13.757mm;">三门峡市教育局公务接待结算审批表</div>
+        <div style="font-size: 3.175mm;margin-top: 7.055mm;display: flex;flex-direction: row;justify-content: space-between;padding-right: 13.757mm;">
+          <div>填表人：{填表人}</div>
+          <div>填表日期：{填表日期}</div>
+        </div>
+      </div>
+      <div style="border: 1px solid #000000;overflow: hidden;display: inline-block;">
+        <table style="font-size: 3.175mm;table-layout: fixed;border-collapse: collapse;">
+          <tbody>
+          <tr style="height: 0;border-style: hidden;" t="本行不显示,用于控制列宽">
+            <td style="width: 39.153mm; border: none;"></td>
+            <td style="width: 78.659mm; border: none;"></td>
+            <td style="width: 39.153mm; border: none;"></td>
+            <td style="width: 78.659mm; border: none;"></td>
+          </tr>
+          <tr style="height: 8.818mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">接待时间</td>
+            <td style="border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 4.586mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{接待开始时间}-{接待结束时间}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">招待用餐顿数</td>
+            <td style="border-bottom: 1px solid #000000;" colspan="3">
+              <div style="max-height: 4.586mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{招待用餐顿数}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">来客单位级别和人员</td>
+            <td style="border-bottom: 1px solid #000000;" colspan="3">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{来客单位级别和人员}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">本单位陪客人员</td>
+            <td style="border-bottom: 1px solid #000000;" colspan="3">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{本单位陪客人员}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">用餐标准及简要情况</td>
+            <td style="border-bottom: 1px solid #000000;" colspan="3">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{用餐标准及简要情况}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">费用项目及金额<br /> （另附菜单等原始凭证）</td>
+            <td style="border-bottom: 1px solid #000000;" colspan="3">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow: hidden;word-break: break-all;">
+                {项目1}<span style="margin-left: 4.586mm;">{金额1}</span>
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;background-color: #EDF0F2;">领导审核意见</td>
+            <td colspan="3">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"></div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

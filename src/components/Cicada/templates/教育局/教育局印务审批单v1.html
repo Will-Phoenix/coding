@@ -1,0 +1,188 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      "交通工具": "121",
+      "出发1区": "工农区",
+      "出发1市": "鹤岗市",
+      " 出发1省": "黑龙江省",
+      "出发2区": "",
+      "出发2市": "",
+      "出发2省": "",
+      "出发3区": "",
+      "出发3市": "",
+      "出发3省": "",
+      "出发4区": "",
+      "出发4市": "",
+      "出发4省": "",
+      "出差事由": "2623",
+      "出差人": "孙晓茜",
+      "出差开始时间": "2023-10-24",
+      "出差结束时间": "2023-10-24",
+      "到达1区": "长宁区",
+      "到达1市": "市辖区",
+      "到达1省": "上海市",
+      "到达2区": "",
+      "到达2市": "",
+      "到达2省": "",
+      "到达3区": "",
+      "到达3市": "",
+      "到达3省": "",
+      "到达4区": "",
+      "到达4市": "",
+      "到达4省": "",
+      "填表日期": "2023年10月24日",
+      "是否带车": "是",
+      "职务": "科员",
+      "费用支付单位": "12232",
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;display: flex;color: #000000;font-weight: 400;">
+    <div style="flex: 1;height: 100%;">
+      <div style="height: 52.910mm;position: relative;overflow: hidden;padding-bottom: 4.233mm;display: flex;flex-direction: column;justify-content: space-between;padding-right: 34.568mm;padding-left: 36.684mm;">
+        <div style="font-size: 6.349mm;line-height:9.876mm;color: #000000;font-weight: 900;text-align: center;padding-top: 28.219mm;">三门峡市教育局印务审批单</div>
+        <div style="font-size: 3.175mm;margin-top: 7.055mm;display: flex;flex-direction: row;justify-content: space-between;">
+          <div>科室名称：{科室名称}</div>
+          <div>{填报时间}</div>
+        </div>
+      </div>
+      <div style="border: 1px solid #000000;overflow: hidden;display: inline-block;margin-right: 34.568mm;margin-left: 36.684mm;">
+        <table style="font-size: 3.175mm;table-layout: fixed;border-collapse: collapse;">
+          <tbody>
+          <tr style="height: 0;border-style: hidden;" t="本行不显示,用于控制列宽">
+            <td style="width: 28.219mm; border: none;"></td>
+            <td style="width: 28.219mm; border: none;"></td>
+            <td style="width: 28.219mm; border: none;"></td>
+            <td style="width: 28.219mm; border: none;"></td>
+            <td style="width: 28.219mm; border: none;"></td>
+            <td style="width: 28.219mm; border: none;"></td>
+            <td style="width: 28.219mm; border: none;"></td>
+            <td style="width: 28.219mm; border: none;"></td>
+          </tr>
+          <tr style="height: 8.818mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="4">项目</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="2">规格</td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="2">数量</td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="4">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目1}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{规格1}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{数量1}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="4">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目2}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{规格2}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{数量2}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="4">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目3}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{规格3}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{数量3}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="4">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目4}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{规格4}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{数量4}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="4">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目5}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{规格5}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{数量5}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="4">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目6}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;border-right: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{规格6}</div>
+            </td>
+            <td style="border-bottom: 1px solid #000000;text-align: center" colspan="2">
+              <div style="max-height: 13.758mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{数量6}</div>
+            </td>
+          </tr>
+          <tr style="height: 8.818mm;">
+            <td style="border-right: 1px solid #000000;text-align: center;background-color: #EDF0F2;">
+              <div style="max-height: 4.586mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">单位负责人</div>
+            </td>
+            <td style="border-right: 1px solid #000000;text-align: center">
+              <div style="max-height: 8.818mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"></div>
+            </td>
+            <td style="border-right: 1px solid #000000;text-align: center;background-color: #EDF0F2;">
+              <div style="max-height: 8.818mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">主管副局长</div>
+            </td>
+            <td style="border-right: 1px solid #000000;text-align: center">
+              <div style="max-height: 8.818mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"></div>
+            </td>
+            <td style="border-right: 1px solid #000000;text-align: center;background-color: #EDF0F2;">
+              <div style="max-height: 8.818mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">科室负责人</div>
+            </td>
+            <td style="border-right: 1px solid #000000;text-align: center">
+              <div style="max-height: 8.818mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"></div>
+            </td>
+            <td style="border-right: 1px solid #000000;text-align: center;background-color: #EDF0F2;">
+              <div style="max-height: 8.818mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">经办人</div>
+            </td>
+            <td style="text-align: center">
+              <div style="max-height: 8.818mm;margin-left: 2.822mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{经办人}</div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      applyTime: "2023年10月7日",
+      applyUser: "张东东",
+      dineWithLeader: "4",
+      dineWithPersonNum: "3",
+      estimatedAmount: "4",
+      id: 113,
+      organizeName: "技术部",
+      receptionEnt: "111",
+      receptionNum: "2",
+      wineName: "5",
+      wineNum: "6",
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 148mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;color: #000000;font-weight: 400;box-sizing: border-box;padding: 0 13.390mm;">
+    <div style="font-size: 7.048mm;text-align: center;padding-top: 12.333mm;width: 100%;">业务招待申请单</div>
+    <div style="margin-top: 10.571mm;display: flex;width: 100%;font-size: 3.171mm;">
+      <div style="">崤云视联科技有限公司</div>
+      <div style="margin-left: 5.638mm;">申请时间：{applyTime}</div>
+    </div>
+    <div style="border: 1px solid #C8C9CC;overflow: hidden;display: inline-block;position: relative;margin-top: 2.819mm;">
+      <table style="font-size: 3.171mm;table-layout: fixed;border-collapse: collapse;">
+        <tbody>
+        <tr style="height: 0;border-style: hidden;" t="本行不显示,用于控制列宽">
+          <td style="width: 35.238mm; border: none;"></td>
+          <td style="width: 25.371mm; border: none;"></td>
+          <td style="width: 35.238mm; border: none;"></td>
+          <td style="width: 25.371mm; border: none;"></td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">审批编号</td>
+          <td style="border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;" colspan="3">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{id}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">申请人</td>
+          <td style="border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;" colspan="3">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{applyUser}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">申请人部门</td>
+          <td style="border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;" colspan="3">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{organizeName}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">接待单位</td>
+          <td style="border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;" colspan="3">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{receptionEnt}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;font-weight: 500;" colspan="4">采购信息</td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="width: 35.238mm;border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">接待人数</td>
+          <td style="width: 25.371mm;border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{receptionNum}</div>
+          </td>
+          <td style="width: 35.238mm;border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">陪餐人数</td>
+          <td style="width: 25.371mm;border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{dineWithPersonNum}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="width: 35.238mm;border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">接待用酒</td>
+          <td style="width: 25.371mm;border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{wineName}</div>
+          </td>
+          <td style="width: 35.238mm;border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">用酒数量</td>
+          <td style="width: 25.371mm;border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{wineNum}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">陪餐领导</td>
+          <td style="border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;" colspan="3">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{dineWithLeader}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">预计金额(元)</td>
+          <td style="border-bottom: 1px solid #C8C9CC;padding: 1.762mm 2.819mm;" colspan="3">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{estimatedAmount}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;font-weight: 500;" colspan="4">审批信息</td>
+        </tr>
+        <tr style="height: 23.962mm;">
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">审批人</td>
+          <td style="border-bottom: 1px solid #C8C9CC;padding: 1.762mm;" colspan="3">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{SYS_FLOW_TASK_OPERATOR_HISTORY}</div>
+          </td>
+        </tr>
+        <tr style="height: 7.752mm;">
+          <td style="border-right: 1px solid #C8C9CC;background-color: #EDF0F2;padding-left: 1.410mm;">抄送</td>
+          <td style="padding: 1.762mm 2.819mm;" colspan="3">
+            <div style="line-height: 4.581mm;overflow: hidden;word-break: break-all;">{SYS_FLOW_TASK_CIRCULATE}</div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

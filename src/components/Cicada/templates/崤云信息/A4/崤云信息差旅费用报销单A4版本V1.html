@@ -1,0 +1,502 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../../cdn/lodash.min.js"></script>
+  <script src="../../cdn/html2canvas.min.js"></script>
+  <script src="../../cdn/FileSaver.min.js"></script>
+  <script src="../../helper.js"></script>
+  <script>
+    const printData = {
+      "applyTime": "",
+      "applyTimeDay": "",
+      "applyTimeMonth": "",
+      "applyTimeYear": "",
+      "applyUserName": "张东东",
+      "deptName": "技术部",
+      "id": "512896662235084613",
+      "line1BeginDay": "01",
+      "line1BeginHour": "12",
+      "line1BeginMonth": "01",
+      "line1BusinessTraveler": "张大仙、李四维、张大仙、李四维、张大仙、李四维、张大仙、李四维、张大仙",
+      "line1Days": "1",
+      "line1DepartCity": "三门峡市",
+      "line1DepartDist": "湖滨区",
+      "line1DepartProv": "河南省",
+      "line1DestCity": "太原市",
+      "line1DestDist": "迎泽区",
+      "line1DestProv": "山西",
+      "line1EndDay": "02",
+      "line1EndHour": "12",
+      "line1EndMonth": "01",
+      "line1PeopleNum": "2",
+      "line1RoomCost": "280",
+      "line1SubsidyCost": "120",
+      "line1SubsidyStandard": "120",
+      "line1TravelCost": "300",
+      "line1VehicleType": "火车",
+      "line2BeginDay": "03",
+      "line2BeginHour": "12",
+      "line2BeginMonth": "01",
+      "line2Days": "2",
+      "line2DepartCity": "大同市",
+      "line2DepartDist": "矿区",
+      "line2DepartProv": "山西",
+      "line2DestCity": "三门峡市",
+      "line2DestDist": "湖滨区",
+      "line2DestProv": "河南省",
+      "line2EndDay": "05",
+      "line2EndHour": "12",
+      "line2EndMonth": "01",
+      "line2PeopleNum": "2",
+      "line2RoomCost": "390",
+      "line2SubsidyCost": "220",
+      "line2SubsidyStandard": "110",
+      "line2TravelCost": "500",
+      "line2VehicleType": "自驾",
+      "line3BeginDay": "",
+      "line3BeginHour": "",
+      "line3BeginMonth": "",
+      "line3Days": "",
+      "line3DepartCity": "",
+      "line3DepartDist": "",
+      "line3DepartProv": "",
+      "line3DestCity": "",
+      "line3DestDist": "",
+      "line3DestProv": "",
+      "line3EndDay": "",
+      "line3EndHour": "",
+      "line3EndMonth": "",
+      "line3PeopleNum": "2",
+      "line3RoomCost": "",
+      "line3SubsidyCost": "",
+      "line3SubsidyStandard": "",
+      "line3TravelCost": "",
+      "line3VehicleType": "",
+      "line4BeginDay": "",
+      "line4BeginHour": "",
+      "line4BeginMonth": "",
+      "line4Days": "",
+      "line4DepartCity": "",
+      "line4DepartDist": "",
+      "line4DepartProv": "",
+      "line4DestCity": "",
+      "line4DestDist": "",
+      "line4DestProv": "",
+      "line4EndDay": "",
+      "line4EndHour": "",
+      "line4EndMonth": "",
+      "line4PeopleNum": "2",
+      "line4RoomCost": "",
+      "line4SubsidyCost": "",
+      "line4SubsidyStandard": "",
+      "line4TravelCost": "",
+      "line4VehicleType": "",
+      "orderNo": 482,
+      "projectName": "大项目试打印模板试打印模板试打印模板试打印模板v",
+      "sumDays": "3",
+      "sumRoomCost": "6700.25",
+      "sumSubsidyCost": "3400.35",
+      "sumTotal": 1810.0,
+      "sumTotalChinese": "壹仟捌佰壹拾元整",
+      "sumVehicleCost": "8000.25",
+      "travelCause": "事由-测试打印模板试打印模板试打印模板试打印模板试打印模板",
+      "travelUsers": "张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东,张东东,乔晓东",
+      "e7": "1000.25",
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;display: flex;color: #000000;font-weight: 400;">
+    <div style="width: 23.633mm;height: 100%;display: flex;flex-flow: column;align-items: center;">
+      <div style="height: 75mm;width: 0.219mm;border-left: 0.219mm dashed #292C33;"></div>
+      <div style="font-size: 4.233mm;font-weight: 400;color: #292C33;">装</div>
+      <div style="height: 23.5mm;width: 0.219mm;border-left: 0.219mm dashed #292C33;"></div>
+      <div style="font-size: 4.233mm;font-weight: 400;color: #292C33;">订</div>
+      <div style="height: 23.5mm;width: 0.219mm;border-left: 0.219mm dashed #292C33;"></div>
+      <div style="font-size: 4.233mm;font-weight: 400;color: #292C33;">线</div>
+      <div style="flex: 1;width: 0.219mm;border-left: 0.219mm dashed #292C33;"></div>
+    </div>
+    <div style="flex: 1;height: 100%;">
+      <div style="height: 36.684mm;width: 100%;position: relative;overflow: hidden;font-size: 4.938mm;">
+        <div style="font-size: 9.876mm;color: #000000;font-weight: 800;letter-spacing: 0.705mm;text-align: center;padding-top: 8.466mm;padding-right: 23.633mm;">差旅费用报销单</div>
+        <div style="display: flex;position: absolute;right: 16mm;top: 10.935mm;width: 69.343mm;height: 9.595mm;">
+          <div style="width: 19.187mm;height: 100%;background: #EDF0F2;border: 0.35mm solid #000000;display: flex;align-items: center;justify-content: center;">编号</div>
+          <div style="flex: 1;height: 100%;background: #FFFFFF;border: 0.35mm solid #000000;border-left: none;display: flex;align-items: center;overflow: hidden;white-space: nowrap;padding: 0 0.5mm;">{orderNo}</div>
+        </div>
+        <div style="display: flex;align-items: center;height: 14.109mm;box-sizing: border-box;padding-right: 19.047mm;">
+          <div>部门：</div>
+          <div style="width: 88.183mm;overflow: hidden;white-space: nowrap;">{deptName}</div>
+          <div style="white-space: nowrap;text-align: center;">{applyTime}</div>
+          <div style="font-weight: 500;flex: 1;text-align: right;">三门峡崤云信息服务股份有限公司</div>
+        </div>
+      </div>
+      <div style="border-radius: 5.233mm;border: 1px solid #000000;overflow: hidden;display: inline-block;">
+        <table style="font-size: 4.938mm;table-layout: fixed;border-collapse: collapse;">
+          <tbody>
+          <tr style="height: 0;border-style: hidden;" t="本行不显示,用于控制列宽">
+            <td style="width: 24.859mm; border: none;"></td>
+            <td style="width: 25.582mm; border: none;"></td>
+            <td style="width: 7.395mm; border: none;"></td>
+            <td style="width: 7.395mm; border: none;"></td>
+            <td style="width: 24.338mm; border: none;"></td>
+            <td style="width: 7.395mm; border: none;"></td>
+            <td style="width: 7.395mm; border: none;"></td>
+            <td style="width: 10.069mm; border: none;"></td>
+            <td style="width: 14.269mm; border: none;"></td>
+            <td style="width: 7.055mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+            <td style="width: 12.480mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+            <td style="width: 12.211mm; border: none;"></td>
+          </tr>
+          <tr style="height: 13.956mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">出差人</td>
+            <td style="border-right: 1px solid #000000;border-bottom: 1px solid #000000;padding-left: 2.822mm;" colspan="4">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{travelUsers}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="3">出差事由</td>
+            <td style="border-right: 1px solid #000000;border-bottom: 1px solid #000000;padding-left: 2.822mm;" colspan="4">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{travelCause}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="2">项目名称</td>
+            <td style="border-bottom: 1px solid #000000;padding-left: 2.822mm;" colspan="6">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{projectName}</div>
+            </td>
+          </tr>
+          <tr style="height: 9.595mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" rowspan="2" colspan="2">行程出差人</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="3">出发</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="4">到达</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" rowspan="2">人<br/>数
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="2">交通</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" rowspan="2">天<br/>数
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="2">出差补助</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="3">其他费用金额</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" rowspan="2">小计</td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;background-color: #EDF0F2;" rowspan="2">单据<br/>张数</td>
+          </tr>
+          <tr style="height: 9.595mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">月</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">日</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">地点</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">月</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">日</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="2">地点</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">工具</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">金额</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">标准</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">金额</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">住宿</td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="2">市内交通</td>
+          </tr>
+          <tr style="height: 13.956mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line1BusinessTraveler}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1BeginMonth}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1BeginDay}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line1DepartProv}{line1DepartCity}{line1DepartDist}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1EndMonth}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1EndDay}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line1DestProv}{line1DestCity}{line1DestDist}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1PeopleNum}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1VehicleType}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1TravelCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1Days}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1SubsidyStandard}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1SubsidyCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1RoomCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line1TotalCost}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.956mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line2BusinessTraveler}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2BeginMonth}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2BeginDay}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line2DepartProv}{line2DepartCity}{line2DepartDist}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2EndMonth}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2EndDay}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line2DestProv}{line2DestCity}{line2DestDist}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2PeopleNum}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2VehicleType}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2TravelCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2Days}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2SubsidyStandard}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2SubsidyCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2RoomCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line2TotalCost}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.956mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line3BusinessTraveler}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3BeginMonth}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3BeginDay}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line3DepartProv}{line3DepartCity}{line3DepartDist}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3EndMonth}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3EndDay}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line3DestProv}{line3DestCity}{line3DestDist}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3PeopleNum}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3VehicleType}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3TravelCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3Days}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3SubsidyStandard}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3SubsidyCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3RoomCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line3TotalCost}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.956mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line4BusinessTraveler}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4BeginMonth}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4BeginDay}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line4DepartProv}{line4DepartCity}{line4DepartDist}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4EndMonth}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4EndDay}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;font-size: 3.880mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{line4DestProv}{line4DestCity}{line4DestDist}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4PeopleNum}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4VehicleType}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4TravelCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4Days}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4SubsidyStandard}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4SubsidyCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4RoomCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{snjt}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{line4TotalCost}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 5.639mm;overflow: hidden;word-break: break-all;">{djzs}</div>
+            </td>
+          </tr>
+          <tr style="height: 13.956mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="11">
+              <div style="height: 9.595mm;width: 100%;display: flex;align-items: center;justify-content: center;">
+                <span>合</span><span style="margin-left: 13.956mm;">计</span>
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{sumVehicleCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{sumDays}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">-</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{sumSubsidyCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{sumRoomCost}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{xxx}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{e7}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div style="max-height: 13.956mm;line-height: 6.5mm;overflow: hidden;word-break: break-all;">{e8}</div>
+            </td>
+          </tr>
+          <tr style="height: 17.009mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;background-color: #EDF0F2;">
+              <div style="width: 100%;display: flex;align-items: center;justify-content: center;">
+                合计金额(大写)
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;" colspan="13">
+              <div style="display: flex;align-items: center;">
+                <span style="flex: 1;"></span>
+                <span>ⓧ{sumTotalChinese}</span>
+                <span style="margin-left: 9.876mm;">¥</span>
+                <span style="margin-left: 1.762mm;text-align: left;flex: 1;">{sumTotal}</span>
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;background-color: #EDF0F2;">预借金额</td>
+            <td style="text-align: center;border-right: 1px solid #000000;" colspan="2">
+              <div style="max-height: 17.009mm;overflow: hidden;word-break: break-all;">{s1}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;background-color: #EDF0F2;">退补金额</td>
+            <td style="text-align: center;" colspan="2">
+              <div style="max-height: 17.009mm;overflow: hidden;word-break: break-all;">{s2}</div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 3.880mm;width: 100%;display: flex;align-items: center;">
+        <div style="margin-left: 3.527mm;">董事长</div>
+        <div style="width: 29.982mm;overflow: hidden;"></div>
+        <div>总经理</div>
+        <div style="width: 26.102mm;overflow: hidden;"></div>
+        <div>财务总监</div>
+        <div style="width: 30.335mm;overflow: hidden;"></div>
+<!--        <div>会计</div>-->
+<!--        <div style="width: 20.793mm;overflow: hidden;"></div>-->
+        <div>部门负责人</div>
+        <div style="width: 24.338mm;overflow: hidden;"></div>
+        <div>报销人</div>
+        <div style="flex: 1;width: 0;overflow: hidden;margin-left: 1mm;">{applyUserName}</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

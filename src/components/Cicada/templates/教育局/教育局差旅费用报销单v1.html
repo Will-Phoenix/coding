@@ -1,0 +1,1052 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta
+    http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate"
+  />
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html,
+      body,
+      * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      住宿费1: "",
+      住宿费2: "",
+      住宿费3: "",
+      住宿费4: "",
+      住宿费5: "",
+      其他1: "",
+      其他2: "",
+      其他3: "",
+      其他4: "",
+      其他5: "",
+      "出发1-区": "",
+      "出发1-市": "",
+      "出发1-省": "",
+      "出发2-区": "",
+      "出发2-市": "",
+      "出发2-省": "",
+      "出发3-区": "",
+      "出发3-市": "",
+      "出发3-省": "",
+      "出发4-区": "",
+      "出发4-市": "",
+      "出发4-省": "",
+      "出发5-区": "",
+      "出发5-市": "",
+      "出发5-省": "",
+      出差事由: "",
+      出差开始时间: "",
+      出差结束时间: "",
+      "到达1-区": "",
+      "到达1-市": "",
+      "到达1-省": "",
+      "到达2-区": "",
+      "到达2-市": "",
+      "到达2-省": "",
+      "到达3-区": "",
+      "到达3-市": "",
+      "到达3-省": "",
+      "到达4-区": "",
+      "到达4-市": "",
+      "到达4-省": "",
+      "到达5-区": "",
+      "到达5-市": "",
+      "到达5-省": "",
+      填表日期: "2023年10月25日",
+      夜间乘车费1: "",
+      夜间乘车费2: "",
+      夜间乘车费3: "",
+      夜间乘车费4: "",
+      夜间乘车费5: "",
+      天: "",
+      天数1: "",
+      天数2: "",
+      天数3: "",
+      天数4: "",
+      天数5: "",
+      姓名: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈",
+      小计金额1: "",
+      小计金额2: "",
+      小计金额3: "",
+      小计金额4: "",
+      小计金额5: "",
+      总金额大写: "",
+      总金额小写: "",
+      日1: "",
+      日2: "",
+      日3: "",
+      日4: "",
+      日5: "",
+      月1: "",
+      月2: "",
+      月3: "",
+      月4: "",
+      月5: "",
+      标准1: "",
+      标准2: "",
+      标准3: "",
+      标准4: "",
+      标准5: "",
+      职别: "",
+      火车费1: "",
+      火车费2: "",
+      火车费3: "",
+      火车费4: "",
+      火车费5: "",
+      金额1: "",
+      金额2: "",
+      金额3: "",
+      金额4: "",
+      金额5: "",
+      SYS_NO_XSS_TRAVEL_PEOPLE:
+        "<img src='https://testminio.smxzhcs.cn:30060/jnpfsoftoss/xy-cicada/public/WebAnnexFile/6563e85bd5ded153250a45e4.png' style='width: 49%'/><img src='https://testminio.smxzhcs.cn:30060/jnpfsoftoss/xy-cicada/public/WebAnnexFile/6563e85bd5ded153250a45e4.png' style='width: 49%' />"
+    };
+    console.log("printData", printData);
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div
+  id="container"
+  t="模板不包含本节点"
+  style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);"
+>
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;display: flex;color: #000000;font-weight: 400;">
+    <div style="width: 46.561mm;height: 100%;display: flex;flex-flow: row;align-items: center;">
+      <div
+        style="height: 128.394mm;font-size: 7.055mm;font-weight: 400;color: #000000;display: flex;flex-direction: column;justify-content: space-between;margin-left: 14.109mm;"
+      >
+        <div>装</div>
+        <div>订</div>
+        <div>线</div>
+      </div>
+      <div style="height: 154.849mm;width: 0.18mm;border-left: 0.18mm dashed #292C33;margin-left: 11.640mm;"></div>
+    </div>
+    <div style="flex: 1;height: 100%;position: relative">
+      <div
+        style="box-sizing: border-box;height: 39.859mm;width: 100%;position: relative;overflow: hidden;padding-bottom: 4.233mm;display: flex;flex-direction: column;justify-content: space-between;"
+      >
+        <div
+          style="font-size: 6.349mm;line-height: 8.818mm;color: #000000;font-weight: 900;text-align: center;padding-top: 15.167mm;padding-right: 22.928mm;"
+        >
+          三门峡市市直教育系统出差旅费报销单{所属单位名称}
+        </div>
+        <div
+          style="display: flex;flex-direction: row;justify-content: space-between;align-items:baseline;margin-top: 2.116mm;font-size: 3.175mm;padding-right: 24mm;"
+        >
+          <div>单位名称：{单位名称}</div>
+          <div>出差事由：{出差事由}</div>
+          <div>
+            {填表日期}<span style="margin-left: 7.055mm"
+          >附件{附件张数}张</span>
+          </div>
+        </div>
+      </div>
+      <div style="border: 1px solid #000000;overflow: hidden;display: inline-block;">
+        <table style="font-size: 3.175mm;table-layout: fixed;border-collapse: collapse;">
+          <tbody>
+          <tr style="height: 0;border-style: hidden;" t="本行不显示,用于控制列宽">
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 18.695mm; border: none;"></td>
+            <td style="width: 18.342mm; border: none;"></td>
+            <td style="width: 18.342mm; border: none;"></td>
+            <td style="width: 18.342mm; border: none;"></td>
+            <td style="width: 18.342mm; border: none;"></td>
+            <td style="width: 18.342mm; border: none;"></td>
+            <td style="width: 9.342mm; border: none;"></td>
+            <td style="width: 9mm; border: none;"></td>
+            <td style="width: 8.818mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 9.171mm; border: none;"></td>
+            <td style="width: 12.698mm; border: none;"></td>
+            <td style="width: 39.153mm; border: none;"></td>
+          </tr>
+          <tr style="height: 17.637mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                colspan="2"
+            >
+              姓名
+            </td>
+            <td style="border-right: 1px solid #000000;border-bottom: 1px solid #000000;padding: 0 2.822mm"
+                colspan="4"
+            >
+              <div
+                style="max-height: 17.637mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {姓名}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              职别
+            </td>
+            <td style="border-right: 1px solid #000000;border-bottom: 1px solid #000000;padding: 0  2.822mm"
+                colspan="2"
+            >
+              <div
+                style="max-height: 17.637mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {职别}
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                colspan="2"
+            >
+              本出差时间
+            </td>
+            <td style="border-bottom: 1px solid #000000;padding: 0  2.822mm" colspan="4">
+              <div
+                style="max-height: 17.637mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {出差开始时间}至{出差结束时间}止共{天}天
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 8.818mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                rowspan="2"
+            >
+              月
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                rowspan="2"
+            >
+              日
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                colspan="2"
+            >
+              起止地点
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                colspan="7"
+            >
+              交通住宿费用
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                colspan="3"
+            >
+              途中住勤补助
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                rowspan="2"
+            >
+              金额小计（元）
+            </td>
+          </tr>
+          <tr style="height: 8.818mm;">
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              出发
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              到达
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              火车费
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              夜间乘车费
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              机船费
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              汽车费
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+                colspan="2"
+            >
+              住宿费
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              其他
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              天数
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              标准
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;"
+            >
+              金额
+            </td>
+          </tr>
+          <tr style="height: 14.109mm;">
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {月1}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {日1}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {出发1省}{出发1市}{出发1区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {到达1省}{到达1市}{到达1区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {火车费1}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {夜间乘车费1}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {机船费1}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {汽车费1}
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+                colspan="2"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {住宿费1}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {其他1}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {天数1}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {标准1}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {金额1}
+              </div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {小计金额1}
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 14.109mm;">
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {月2}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {日2}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {出发2省}{出发2市}{出发2区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {到达2省}{到达2市}{到达2区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {火车费2}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {夜间乘车费2}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {机船费2}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {汽车费2}
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+                colspan="2"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {住宿费2}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {其他2}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {天数2}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {标准2}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {金额2}
+              </div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {小计金额2}
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 14.109mm;">
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {月3}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {日3}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {出发3省}{出发3市}{出发3区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {到达3省}{到达3市}{到达3区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {火车费3}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {夜间乘车费3}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {机船费3}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {汽车费3}
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+                colspan="2"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {住宿费3}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {其他3}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {天数3}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {标准3}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {金额3}
+              </div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {小计金额3}
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 14.109mm;">
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {月4}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {日4}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {出发4省}{出发4市}{出发4区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {到达4省}{到达4市}{到达4区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {火车费4}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {夜间乘车费4}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {机船费4}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {汽车费4}
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+                colspan="2"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {住宿费4}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {其他4}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {天数4}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {标准4}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {金额4}
+              </div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {小计金额4}
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 14.109mm;">
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {月5}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {日5}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {出发5省}{出发5市}{出发5区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {到达5省}{到达5市}{到达5区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {火车费5}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {夜间乘车费5}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {机船费5}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {汽车费5}
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+                colspan="2"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {住宿费5}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {其他5}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {天数5}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {标准5}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {金额5}
+              </div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {小计金额5}
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 14.109mm;">
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {月6}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              {日6}
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {出发6省}{出发6市}{出发6区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {到达6省}{到达6市}{到达6区}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {火车费6}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {夜间乘车费6}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {机船费6}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {汽车费6}
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+                colspan="2"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {住宿费6}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {其他6}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {天数6}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {标准6}
+              </div>
+            </td>
+            <td
+              style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;"
+            >
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {金额6}
+              </div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div
+                style="max-height: 14.109mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {小计金额6}
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 14.109mm;">
+            <td style="padding: 0 2.822mm;border-right: 1px solid #000000;" colspan="14">
+              合计&nbsp;&nbsp;人民币（大写）：{总金额大写}
+            </td>
+            <td style="text-align: center;">
+              <div
+                style="max-height: 17.637mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;"
+              >
+                {总金额小写}
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 4.233mm;width: 100%;display: flex;align-items: center;font-size: 3.175mm">
+        <div>分管财务领导：</div>
+        <div style="width: 28.219mm;overflow: hidden;"></div>
+        <div>财务负责人：</div>
+        <div style="width: 28.219mm;overflow: hidden;"></div>
+        <div>分管科室领导：</div>
+        <div style="width: 28.219mm;overflow: hidden;"></div>
+        <div>科室负责人：</div>
+        <div style="width: 28.219mm;overflow: hidden;"></div>
+        <div>经办人：</div>
+        <div style="flex: 1;width: 0;overflow: hidden;margin-left: 1mm;">
+          {报销人}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

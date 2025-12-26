@@ -1,0 +1,206 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      "T1": [{"摘要1": "摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1摘要1", "科目1": "科目1科目1科目1科目1科目1科目1科目1", "附单据数1": 2111, "金额大写1": "贰拾贰元整贰拾贰元整贰拾贰元整贰拾贰元整贰拾贰元整贰拾贰元整", "金额小写1": 22}],
+      "T2": [{"摘要2": "摘要2摘要2摘要2摘要2摘要2摘要2摘要2摘要2摘要2摘要2摘要1摘要1摘要1摘要1摘要1", "科目2": "科目2科目2科目2科目2科目2科目2科目2", "金额小写2": 222222, "附单据数2": 2221, "金额大写2": "贰拾贰元整贰拾贰元整贰拾贰元整贰拾贰元整贰拾贰元整贰拾贰元整"}],
+      "T3": [{"摘要3": "摘要3摘要3摘要3摘要3摘要3摘要3摘要3摘要3摘要3摘要3摘要1摘要1摘要1摘要1摘要1", "科目3": "科目3科目3科目3科目3科目3科目3科目3",  "附单据数3": 2223, "金额小写3": 3333333, "金额大写3": ""}],
+      "T4": [{"摘要4": "摘要4摘要4摘要4摘要4摘要4摘要4摘要4摘要4摘要4摘要4摘要1摘要1摘要1摘要1摘要1", "科目4": "科目4科目4科目4科目4科目4科目4科目4",  "附单据数4": 444444, "金额小写4": 44444444, "金额大写4": ""}],
+      "id": "480382672078688581",
+      "公司名称": "三门峡崤云视联科技有限公司",
+      "总金额大写": "贰拾贰元整贰拾贰元整贰",
+      "总金额小写": 22,
+      "申请时间": "2023年10月08日",
+      "编号": 215,
+      "部门": "技术部技术部技术部技术部技术部技术部技术部技术部技术部技术部",
+      "项目名称": "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+      "报销人": "张三张三",
+      "转账类型": "（对公）"
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 240mm;height: 140mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;display: flex;color: #000000;font-weight: 400;">
+    <div style="width: 19mm;height: 100%;display: flex;flex-flow: column;align-items: center;">
+      <div style="height: 47.93mm;width: 0.18mm;border-left: 0.18mm dashed #292C33;"></div>
+      <div style="font-size: 3.52mm;font-weight: 400;color: #292C33;">装</div>
+      <div style="height: 14.8mm;width: 0.18mm;border-left: 0.18mm dashed #292C33;"></div>
+      <div style="font-size: 3.52mm;font-weight: 400;color: #292C33;">订</div>
+      <div style="height: 14.8mm;width: 0.18mm;border-left: 0.18mm dashed #292C33;"></div>
+      <div style="font-size: 3.52mm;font-weight: 400;color: #292C33;">线</div>
+      <div style="flex: 1;width: 0.18mm;border-left: 0.18mm dashed #292C33;"></div>
+    </div>
+    <div style="flex: 1;height: 100%;">
+      <div style="height: 29.6mm;width: 100%;position: relative;overflow: hidden;padding-bottom: 2.819mm;">
+        <div style="font-size: 8.46mm;color: #000000;font-weight: 800;letter-spacing: 0.7mm;text-align: center;padding-top: 6.34mm;padding-right: 9.163mm;">费用报销单</div>
+        <div style="display: flex;justify-content: space-between;align-items: flex-end;height: 10.925mm;box-sizing: border-box;padding-right: 9.163mm;">
+          <div style="width: 56.036mm;">{申请时间}</div>
+          <div style="font-weight: 500;flex: 1;text-align: center">{公司名称}</div>
+          <div style="display: flex;width: 56.036mm;height: 7.75mm;">
+            <div style="width: 15.51mm;height: 100%;background: #EDF0F2;border: 0.35mm solid #000000;display: flex;align-items: center;justify-content: center;">编号</div>
+            <div style="flex: 1;height: 100%;background: #FFFFFF;border: 0.35mm solid #000000;border-left: none;display: flex;align-items: center;overflow: hidden;white-space: nowrap;padding: 0 1.762mm;">{编号}</div>
+          </div>
+        </div>
+      </div>
+      <div style="border-radius: 4.32mm;border: 1px solid #000000;overflow: hidden;display: inline-block;">
+        <table style="font-size: 4mm;table-layout: fixed;border-collapse: collapse;">
+          <tbody>
+          <tr style="height: 0;border-style: hidden;" t="本行不显示,用于控制列宽">
+            <td style="width: 28.194mm; border: none;"></td>
+            <td style="width: 34.537mm; border: none;"></td>
+            <td style="width: 24.669mm; border: none;"></td>
+            <td style="width: 28.194mm; border: none;"></td>
+            <td style="width: 50.749mm; border: none;"></td>
+            <td style="width: 6.344mm; border: none;"></td>
+            <td style="width: 28.194mm; border: none;"></td>
+            <td style="width: 9.868mm; border: none;"></td>
+          </tr>
+          <tr style="height: 11.278mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">部门</td>
+            <td style="border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="height: 7.75mm;margin-left: 2.819mm;line-height: 7.75mm;overflow:hidden;">{部门}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">项目名称</td>
+            <td style="border-bottom: 1px solid #000000;" colspan="4">
+              <div style="height: 7.75mm;margin-left: 2.819mm;line-height: 7.75mm;overflow:hidden;">{项目名称}</div>
+            </td>
+          </tr>
+          <tr style="height: 15.859mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="4">
+              <div style="width: 100%;display: flex;align-items: center;justify-content: center;">
+                <span>摘</span><span style="margin-left: 38.062mm;">要</span>
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="2">
+              <span>金</span><span style="margin-left: 5.639mm;">额</span>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">
+              <span>科</span><span style="margin-left: 2.82mm;">目</span>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;background-color: #EDF0F2;">附单<br/>据数</td>
+          </tr>
+          <tr style="height: 9.868mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="4">
+              <div style="width: 100%;display: flex;justify-content: center;max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T1[0].摘要1]}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T1[0].金额小写1}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T1[0].科目1}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000;">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T1[0].附单据数1}</div>
+            </td>
+          </tr>
+          <tr style="height: 9.868mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="4">
+              <div style="width: 100%;display: flex;justify-content: center;max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T2[0].摘要2]}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T2[0].金额小写2}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T2[0].科目2}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T2[0].附单据数2}</div>
+            </td>
+          </tr>
+          <tr style="height: 9.868mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="4">
+              <div style="width: 100%;display: flex;justify-content: center;max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T3[0].摘要3]}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T3[0].金额小写3}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T3[0].科目3}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T3[0].附单据数3}</div>
+            </td>
+          </tr>
+          <tr style="height: 9.868mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="4">
+              <div style="width: 100%;display: flex;justify-content: center;max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T4[0].摘要4]}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T4[0].金额小写4}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T4[0].科目4}</div>
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{T4[0].附单据数4}</div>
+            </td>
+          </tr>
+          <tr style="height: 9.868mm;">
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="4">
+              <div style="height: 7.753mm;width: 100%;display: flex;align-items: center;padding-left: 2.819mm">
+                <span>人民币（大写）</span><span>{总金额大写}</span>
+              </div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;" colspan="2">
+              <div style="max-height: 5.991mm;line-height: 5.991mm;overflow: hidden;word-break: break-all;">{总金额小写}</div>
+            </td>
+            <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+            </td>
+            <td style="text-align: center;border-bottom: 1px solid #000000"></td>
+          </tr>
+          <tr style="height: 13.392mm;">
+            <td style="border-right: 1px solid #000000;" colspan="2">
+              <span style="padding-left: 2.819mm">董事长</span>
+            </td>
+            <td style="border-right: 1px solid #000000;" colspan="2">
+              <span style="padding-left: 2.819mm">总经理</span>
+            </td>
+            <td style="border-right: 1px solid #000000;">
+              <span style="padding-left: 2.819mm">副总经理</span>
+            </td>
+            <td colspan="3">
+              <span style="padding-left: 2.819mm">负责人</span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 3.172mm;width: 100%;display: flex;justify-content:space-between;">
+        <div style="width: 62.731mm;display: flex;">
+          <div style="margin-left: 2.819mm;word-break: keep-all">财务审核</div>
+          <div style="width: 23.612mm;overflow: hidden;"></div>
+        </div>
+        <div style="flex: 1;display: flex;">
+          <div style="margin-left: 27.489mm;word-break: keep-all">出纳</div>
+          <div style="overflow: hidden;"></div>
+        </div>
+        <div style="width: 50.110mm;margin-right: 9.163mm;display: flex;">
+          <div style="margin-left: 2.467mm;word-break: keep-all">报销人</div>
+          <div style="flex: 1;width: 0;overflow: hidden;margin-left: 1mm;">{报销人}{转账类型}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

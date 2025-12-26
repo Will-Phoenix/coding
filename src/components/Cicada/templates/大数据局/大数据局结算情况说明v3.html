@@ -1,0 +1,218 @@
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+      html, body, * {
+          padding: 0;
+          margin: 0;
+      }
+  </style>
+  <script src="../cdn/lodash.min.js"></script>
+  <script src="../cdn/html2canvas.min.js"></script>
+  <script src="../cdn/FileSaver.min.js"></script>
+  <script src="../helper.js"></script>
+  <script>
+    const printData = {
+      "名称": "张东东的常规报销单",
+      "收款人1": "张三三三",
+      "收款人2": "李四",
+      "收款人3": "王五",
+      "收款人4": "",
+      "收款人5": "",
+      "收款人6": "",
+      "收款人7": "",
+      "收款人8": "",
+      "收款人9": "",
+      "收款人10": "",
+      "序号1": "1",
+      "序号2": "2",
+      "序号3": "3",
+      "序号4": "4",
+      "序号5": "5",
+      "序号6": "6",
+      "序号7": "7",
+      "序号8": "8",
+      "序号9": "9",
+      "序号10": "10",
+      "付款金额1": "20000000",
+      "付款金额2": "400",
+      "付款金额3": "500",
+      "付款金额4": "",
+      "付款金额5": "",
+      "付款金额6": "",
+      "付款金额7": "",
+      "付款金额8": "",
+      "付款金额9": "",
+      "付款金额10": "",
+      "付款账号1": "12345678901234567890",
+      "付款账号2": "400",
+      "付款账号3": "500",
+      "付款账号4": "",
+      "付款账号5": "",
+      "付款账号6": "",
+      "付款账号7": "",
+      "付款账号8": "",
+      "付款账号9": "",
+      "付款账号10": "",
+      "付款类型1":"单位对公转账",
+      "付款类型2":"公务卡",
+      "付款类型3":"银行卡",
+      "刷卡日期1":"2023年12月26日",
+      "开户行1":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行2":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行3":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行4":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行5":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行6":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行7":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行8":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行9":"工商银行三门峡分行工商银行三门峡分行",
+      "开户行10":"工商银行三门峡分行工商银行三门峡分行"
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点" style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);">
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;color: #000000;font-weight: 400;box-sizing: border-box;padding: 0 11.529mm;">
+    <div style="text-align: center;padding-top: 15.294mm;width: 100%;">
+      <div style="font-size: 8.471mm;font-weight: 900;">三门峡市政务服务和大数据管理局</div>
+      <div style="font-size: 6.353mm;font-weight: 400;margin-top: 3.529mm;">{名称}结算情况说明</div>
+    </div>
+    <div style="border: 1px solid #C8C9CC;overflow: hidden;display: inline-block;margin-top: 9.176mm;">
+      <table style="font-size: 4.941mm;table-layout: fixed;border-collapse: collapse;width: 100%;">
+        <tbody>
+        <tr style="height: 0;border-style: hidden;" t="本行不显示,用于控制列宽">
+          <td style="width: 0;border: none;"></td>
+          <td style="width: 10.353mm; border: none;"></td>
+          <td style="width: 20.353mm; border: none;"></td>
+          <td style="width: 12.471mm; border: none;"></td>
+          <td style="width: 16.471mm; border: none;"></td>
+          <td style="width: 34.471mm; border: none;"></td>
+          <td style="width: 26.471mm; border: none;"></td>
+          <td style="width: 22.471mm; border: none;"></td>
+        </tr>
+        <tr style="height: 12.706mm;">
+          <td></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;text-align: center;">序号</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;text-align: center;">付款类型</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;text-align: center;">收款人</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;text-align: center;">付款金额</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;text-align: center;">付款账号</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;text-align: center;">开户行</td>
+          <td style="border-bottom: 1px solid #C8C9CC;background-color: #EDF0F2;text-align: center;">刷卡日期</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{序号1}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款类型1}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人1}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额1}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号1}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行1}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期1}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号2}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型2}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人2}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额2}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号2}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行2}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期2}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号3}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型3}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人3}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额3}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号3}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行3}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期3}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号4}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型4}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人4}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额4}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号4}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行4}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期4}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号5}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型5}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人5}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额5}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号5}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行5}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期5}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号6}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型6}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人6}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额6}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号6}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行6}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期6}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号7}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型7}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人7}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额7}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号7}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行7}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期7}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号8}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型8}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人8}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额8}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号8}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行8}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期8}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号9}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型9}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{收款人9}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款金额9}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{付款账号9}</td>
+          <td style="border-right: 1px solid #C8C9CC;border-bottom: 1px solid #C8C9CC;text-align: center;">{开户行9}</td>
+          <td style="border-bottom: 1px solid #C8C9CC;text-align: center;">{刷卡日期9}</td>
+        </tr>
+        <tr>
+          <td style="height: 7.765mm;"></td>
+          <td style="border-right: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{序号10}</td>
+          <td style="border-right: 1px solid #C8C9CC;text-align: center;min-height: 7.765mm;">{付款类型10}</td>
+          <td style="border-right: 1px solid #C8C9CC;text-align: center;">{收款人10}</td>
+          <td style="border-right: 1px solid #C8C9CC;text-align: center;">{付款金额10}</td>
+          <td style="border-right: 1px solid #C8C9CC;text-align: center;">{付款账号10}</td>
+          <td style="border-right: 1px solid #C8C9CC;text-align: center;">{开户行10}</td>
+          <td style="text-align: center;">{刷卡日期10}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

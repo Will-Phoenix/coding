@@ -1,0 +1,198 @@
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <style>
+    html,
+    body,
+    * {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <script src="../../cdn/lodash.min.js"></script>
+  <script src="../../cdn/html2canvas.min.js"></script>
+  <script src="../../cdn/FileSaver.min.js"></script>
+  <script src="../../helper.js"></script>
+  <script>
+    const printData = {
+      "id": "512900271001663301",
+      "公司名称": "三门峡崤云信息服务股份有限公司",
+      "总金额大写": "伍佰元整",
+      "总金额小写": 500.00,
+      "报销人": "郭梦薇",
+      "摘要1": "hkhihihi",
+      "摘要2": "",
+      "摘要3": "",
+      "摘要4": "",
+      "申请时间": "2024年6月14日",
+      "科目1": "222",
+      "科目2": "",
+      "科目3": "",
+      "科目4": "",
+      "编号": 485,
+      "部门": "三门峡崤云信息服务股份有限公司",
+      "金额大写1": "",
+      "金额大写2": "",
+      "金额大写3": "",
+      "金额大写4": "",
+      "金额小写1": "500",
+      "金额小写2": "",
+      "金额小写3": "",
+      "金额小写4": "",
+      "附单据数1": "3",
+      "附单据数2": "",
+      "附单据数3": "",
+      "附单据数4": "",
+      "客户单位科室": "hghkjhk",
+      "云服务每年预算成本": "100"
+    }
+    console.log('printData', printData)
+  </script>
+</head>
+
+<body>
+<div style="text-align: center;padding-top: 10px;">
+  <button onclick="preview('container',printData)">渲染模拟数据</button>
+  <button onclick="toImage('container')">生成图片</button>
+</div>
+<div id="container" t="模板不包含本节点"
+     style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);"
+>
+  <div t="模板内容根节点,从此节点开始(包含本节点)放到编辑模板源码内" style="width: 100%;height: 100%;display: flex;color: #000000;font-weight: 400;">
+    <div style="width: 43.386mm;height: 100%;display: flex;flex-flow: row;align-items: center;">
+      <div style="height: 128.394mm;font-size: 7.055mm;font-weight: 400;color: #000000;display: flex;flex-direction: column;justify-content: space-between;margin-left: 14.109mm;">
+        <div>装</div>
+        <div>订</div>
+        <div>线</div>
+      </div>
+      <div style="height: 154.849mm;width: 0.18mm;border-left: 0.18mm dashed #292C33;margin-left: 11.640mm;"></div>
+    </div>
+    <div style="flex: 1;height: 100%;">
+      <div style="height: 66.543mm;width: 100%;position: relative;overflow: hidden;padding-bottom: 4.233mm;display: flex;flex-direction: column;justify-content: end;">
+        <div style="font-size: 6.349mm;line-height:8.818mm;color: #000000;font-weight: 900;text-align: center;padding-top: 41.852mm;padding-right: 22.575mm;">上云项目前置单</div>
+        <div style="font-size: 3.175mm;margin-top: 7.055mm;display: flex;flex-direction: row;justify-content: end;padding-right: 22.575mm;">
+          <div>审批编号：{编号}</div>
+        </div>
+      </div>
+      <div style="border: 1px solid #000000;overflow: hidden;display: inline-block;">
+        <table style="font-size: 3.175mm;table-layout: fixed;border-collapse: collapse;">
+          <tbody>
+            <tr style="height: 0;border-style: hidden;" t="本行不显示,用于控制列宽">
+              <td style="width: 57.495mm; border: none;"></td>
+              <td style="width: 57.495mm; border: none;"></td>
+              <td style="width: 57.495mm; border: none;"></td>
+              <td style="width: 57.495mm; border: none;"></td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">申请人</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{申请人applyUserName}</div>
+              </td>
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">申请部门</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{申请部门deptName}</div>
+              </td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">项目名称</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目名称}</div>
+              </td>
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">项目负责人</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目负责人}</div>
+              </td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">项目简述</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-bottom: 1px solid #000000;" colspan="3">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{项目简述}</div>
+              </td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">客户单位名称</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{客户单位名称}</div>
+              </td>
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">客户单位科室/部门</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{客户单位科室}</div>
+              </td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">客户单位联系人</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{客户单位联系人}</div>
+              </td>
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">客户单位联系人电话</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{客户单位联系人电话}</div>
+              </td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">合同编号</td>
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">合同名称</td>
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;">合同开始时间</td>
+              <td style="text-align: center;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">合同结束时间</td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{合同编号}</div>
+              </td>
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{合同名称}</div>
+              </td>
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{合同开始时间}</div>
+              </td>
+              <td style="text-align: center;border-bottom: 1px solid #000000;">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{合同结束时间}</div>
+              </td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;border-bottom: 1px solid #000000;background-color: #EDF0F2;" colspan="1">云服务每年预算成本（元）</td>
+              <td style="text-align: left;padding-left: 2.82mm;border-bottom: 1px solid #000000;" colspan="3">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{云服务每年预算成本}</div>
+              </td>
+            </tr>
+            <tr style="height: 9.172mm;">
+              <td style="text-align: center;border-right: 1px solid #000000;background-color: #EDF0F2;" colspan="1">说明</td>
+              <td style="text-align: left;padding-left: 2.82mm;" colspan="3">
+                <div style="max-height: 9.172mm;line-height: 4.586mm;overflow:hidden;word-break: break-all;">{说明}</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 4.233mm;width: 100%;display: flex;font-size: 3.175mm;line-height: 4.586mm;">
+        <div style="width: 49.030mm;display: flex;">
+          <div style="word-break: keep-all">部门负责人审批：</div>
+          <div style="overflow: hidden;"></div>
+        </div>
+        <div style="width: 53.615mm;display: flex;">
+          <div style="word-break: keep-all">部门分管领导审批：</div>
+          <div style="overflow: hidden;"></div>
+        </div>
+        <div style="width: 44.092mm;display: flex;">
+          <div style="word-break: keep-all">运维部审批：</div>
+          <div style="overflow: hidden;"></div>
+        </div>
+        <div style="width: 44.092mm;display: flex;">
+          <div style="word-break: keep-all">总经理审批；</div>
+          <div style="overflow: hidden;"></div>
+        </div>
+        <div style="width: 44.092mm;display: flex;">
+          <div style="word-break: keep-all">董事长审批：</div>
+          <div style="overflow: hidden;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

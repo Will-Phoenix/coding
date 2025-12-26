@@ -1,0 +1,279 @@
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style>
+      html,
+      body,
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script src="../cdn/lodash.min.js"></script>
+    <script src="../cdn/html2canvas.min.js"></script>
+    <script src="../cdn/FileSaver.min.js"></script>
+    <script src="../helper.js"></script>
+    <script>
+      const printData = {
+        SYS_FLOW_TASK_OPERATOR_HISTORY:
+          "王张起 发起审批 2023年08月32日 16:23:41\n张敬业 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41\n李自强 已审批（同意） 2023年08月32日 16:23:41",
+        SYS_FLOW_TASK_CIRCULATE: "李杰克、张凯瑞、金广智"
+      };
+      console.log("printData", printData);
+    </script>
+  </head>
+  <body>
+    <div style="text-align: center;padding-top: 10px;">
+      <button onclick="preview('container',printData)">渲染模拟数据</button>
+      <button onclick="toImage('container')">生成图片</button>
+    </div>
+    <div
+      id="container"
+      t="模板不包含本节点"
+      style="width: 297mm;height: 210mm;box-sizing: border-box;margin: 10mm auto;box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);"
+    >
+      <div
+        style="width: 100%; height: 100%; color: #000000; display: flex; font-weight: 400; font-size: 3.18mm; font-family: STSongti-SC, STSongti-SC;"
+      >
+        <div
+          style="width: 46.561mm; height: 100%; display: flex; flex-flow: row; align-items: center;"
+        >
+          <div
+            style="height: 114.638mm; font-size: 6.349mm; font-weight: 400; color: #000000; display: flex; flex-direction: column; justify-content: space-between; margin-left: 14.462mm;"
+          >
+            <div>装</div>
+            <div>订</div>
+            <div>线</div>
+          </div>
+          <div
+            style="height: 154.849mm; width: 0.18mm; border-left: 0.18mm dashed #292C33; margin-left: 11.993mm;"
+          ></div>
+        </div>
+        <div style="flex: 1; height: 100%; position: relative;">
+          <div
+            style="box-sizing:border-box;height: 77.601mm; width: 100%; position: relative; overflow: hidden; padding-bottom: 4.223mm; display: flex; flex-direction: column; justify-content: space-between;"
+          >
+            <div
+              style="font-size: 6.349mm; line-height: 8.818mm; color: #000000; font-weight: 900; text-align: center; padding-top: 52.910mm; padding-right: 13.757mm;"
+            >
+              三门峡市发改委公务活动派车单
+            </div>
+            <div
+              style="display: flex; flex-direction: row; font-size: 3.175mm; padding-right: 13.757mm;line-height: 4.586mm;padding-top: 7.055mm;"
+            >
+              <div style="display: flex; padding-left: 174.249mm;">
+                <div>填报日期：</div>
+                <div>{填报日期}</div>
+              </div>
+            </div>
+          </div>
+          <div style="overflow: hidden; display: inline-block;">
+            <table
+              style="font-size: 3.175mm; table-layout: fixed; border-collapse: collapse;"
+            >
+              <tbody>
+                <tr style="height: 0; font-size: 0;">
+                  <td style="width: 37.390mm; border: none;"></td>
+                  <td style="width: 81.128mm; border: none;"></td>
+                  <td style="width: 42.328mm; border: none;"></td>
+                  <td style="width: 75.485mm; border: none;"></td>
+                </tr>
+                <tr style="height: 8.818mm;">
+                  <td
+                    style="text-align: center;border-left:1px solid #000000;border-top: 1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    用车人
+                  </td>
+                  <td
+                    style="border-top: 1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    >
+                      <span class="" contenteditable="false">{用车人}</span>
+                    </div>
+                  </td>
+                  <td
+                    style="text-align: center; border-top: 1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    用车时间
+                  </td>
+                  <td
+                    style="border-top: 1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    >
+                      {用车开始时间}至{用车结束时间}
+                    </div>
+                  </td>
+                </tr>
+                <tr style="height: 8.818mm;">
+                  <td
+                    style="text-align: center; border-left:1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    用车事由
+                  </td>
+                  <td
+                    style="border-bottom: 1px solid #000000; padding-left: 2.822mm;border-right: 1px solid #000000;"
+                    colspan="3"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    >
+                      {用车事由}
+                    </div>
+                  </td>
+                </tr>
+                <tr style="height: 8.818mm;">
+                  <td
+                    style="text-align: center; border-left:1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                    rowspan="4"
+                  >
+                    起（经）止地点
+                  </td>
+                  <td
+                    style="border-bottom: 1px solid #000000; padding-left: 2.822mm;border-right: 1px solid #000000;"
+                  >
+                    <div
+                      style="padding:1mm 0;max-height: 13.242mm; line-height: 4.414mm; overflow: hidden; word-break: break-all;"
+                    >
+                      {出发1省}{出发1市}{出发1区}{至1}{到达1省}{到达1市}{到达1区}
+                    </div>
+                  </td>
+                  <td
+                    style="text-align: center; border-left:1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    用车人数
+                  </td>
+                  <td
+                    style="border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    >
+                      {用车人数}
+                    </div>
+                  </td>
+                </tr>
+                <tr style="height: 8.818mm;">
+                  <td
+                    style="border-bottom: 1px solid #000000; padding-left: 2.822mm;border-right: 1px solid #000000;"
+                  >
+                    <div
+                      style="padding:1mm 0;max-height: 13.242mm; line-height: 4.414mm;overflow: hidden; word-break: break-all;"
+                    >
+                      {出发2省}{出发2市}{出发2区}{至2}{到达2省}{到达2市}{到达2区}
+                    </div>
+                  </td>
+                  <td
+                    style="text-align: center; border-left:1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    司机姓名
+                  </td>
+                  <td
+                    style="border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    >
+                      {司机姓名}
+                    </div>
+                  </td>
+                </tr>
+                <tr style="height: 8.818mm;">
+                  <td
+                    style="border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;"
+                  >
+                    <div
+                      style="padding:1mm 0;max-height: 13.242mm; line-height: 4.414mm; overflow: hidden; word-break: break-all;"
+                    >
+                      {出发3省}{出发3市}{出发3区}{至3}{到达3省}{到达3市}{到达3区}
+                    </div>
+                  </td>
+                  <td
+                    style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    车号
+                  </td>
+                  <td
+                    style="border-bottom: 1px solid #000000; padding-left: 2.822mm;border-right: 1px solid #000000;"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    >
+                      {车号}
+                    </div>
+                  </td>
+                </tr>
+                <tr style="height: 8.818mm;">
+                  <td
+                    style="border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;"
+                  >
+                    <div
+                      style="padding:1mm 0;max-height: 13.242mm; line-height: 4.414mm; overflow: hidden; word-break: break-all;"
+                    >
+                      {出发4省}{出发4市}{出发4区}{至4}{到达4省}{到达4市}{到达4区}
+                    </div>
+                  </td>
+                  <td
+                    style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    科室负责人签字
+                  </td>
+                  <td
+                    style="border-bottom: 1px solid #000000; padding-left: 2.822mm;border-right: 1px solid #000000;"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    ></div>
+                  </td>
+                </tr>
+                <tr style="height: 8.818mm;">
+                  <td
+                    style="text-align: center; border-left:1px solid #000000;border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    办公室签字
+                  </td>
+                  <td
+                    style="border-right: 1px solid #000000; border-bottom: 1px solid #000000; padding-left: 2.822mm;"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    ></div>
+                  </td>
+                  <td
+                    style="text-align: center; border-right: 1px solid #000000; border-bottom: 1px solid #000000; background-color: #edf0f2;"
+                  >
+                    分管领导签字
+                  </td>
+                  <td
+                    style="border-bottom: 1px solid #000000; padding-left: 2.822mm;border-right: 1px solid #000000;"
+                  >
+                    <div
+                      style="max-height: 8.818mm; line-height: 8.818mm; overflow: hidden; word-break: break-all;"
+                    ></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            style="display: flex; flex-direction: row; font-size: 3.175mm; padding-right: 13.757mm;line-height: 4.586mm;padding-top: 4.233mm;"
+          >
+            <div style="display: flex;padding-left: 174.249mm;">
+              <div>经办人：</div>
+              <div>{经办人OperatorUserName}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
